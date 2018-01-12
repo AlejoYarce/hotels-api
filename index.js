@@ -3,7 +3,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-// const Hotel = require('./models/hotel');
+const Hotel = require('./models/hotel');
 const routes = require('./routes');
 const HotelsController = require('./controllers/hotelsController');
 
