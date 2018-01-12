@@ -12,9 +12,9 @@ module.exports = function (app) {
     .get(HotelsController.list)
     .post(HotelsController.create);
 
-
   app.route('/hotels/:id')
     .get(HotelsController.get)
     .put(HotelsController.update)
     .delete(HotelsController.delete);
+
 };

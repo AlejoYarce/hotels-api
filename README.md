@@ -24,6 +24,8 @@
   - `/` --> Test route showing *Connected* message
   - `/hotels` --> GET & POST
   - `/hotels/:id` --> GET, PUT & DELETE
+- **Public**
+  - `/img` --> Hotels photos *Place here new photos in case you create a new Hotel*
 
 ## Build Setup
 

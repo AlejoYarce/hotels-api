@@ -4,7 +4,16 @@ const mongoose = require('mongoose');
 const Hotel = mongoose.model('Hotel');
 const DemoHotelsData = require('../models/DemoHotelsData');
 
-// Insert Demo Data
+
+/** Insert Demo Data
+ * Preload the Data
+ * If Data exists, only execute an Update
+ * If Data doesn't exist, execute the insert
+ * Create a Promise for every Hotel that found in the DemoHotelsData file
+ * Run Promise.all to insert/update all Hotels
+ * @param {*} req
+ * @param {*} res
+ */
 exports.init = (req, res) => {
   const promiseArray = DemoHotelsData.map(hotel =>
     new Promise((resolve, reject) => {
@@ -19,7 +28,14 @@ exports.init = (req, res) => {
   return Promise.all(promiseArray);
 };
 
-// List Hotels
+
+/**
+ * List Hotels
+ * GET
+ * Route: /hotels
+ * @param {*} req 
+ * @param {*} res 
+ */
 exports.list = (req, res) => {
   Hotel.find({}, (err, hotels) => {
     if (err) res.json({ err });
@@ -29,7 +45,13 @@ exports.list = (req, res) => {
 };
 
 
-// Create Hotel
+/**
+ * Create Hotel
+ * POST
+ * Route: /hotels
+ * @param {*} req --> req.body
+ * @param {*} res
+ */
 exports.create = (req, res) => {
   const newHotel = new Hotel(req.body);
   newHotel.save((err, hotel) => {
@@ -40,7 +62,13 @@ exports.create = (req, res) => {
 };
 
 
-// Get Hotel Detail
+/**
+ * Hotel Details
+ * GET
+ * Route: /hotels/:id
+ * @param {*} req --> req.params.id
+ * @param {*} res
+ */
 exports.get = (req, res) => {
   Hotel.findById(req.params.id, (err, hotel) => {
     if (err) res.json({ err });
@@ -50,7 +78,13 @@ exports.get = (req, res) => {
 };
 
 
-// Update Hotel
+/**
+ * Update Hotel
+ * PUT
+ * Route: /hotels/:id
+ * @param {*} req --> req.params.id
+ * @param {*} res
+ */
 exports.update = (req, res) => {
   Hotel.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true }, (err, hotel) => {
     if (err) res.json({ err });
@@ -60,7 +94,14 @@ exports.update = (req, res) => {
 };
 
 
-// Delete Hotel
+/**
+ * Delete Hotel
+ * Validate if the Hotel exists before delete it
+ * DELETE
+ * Route: /hotels/:id
+ * @param {*} req --> req.params.id
+ * @param {*} res
+ */
 exports.delete = (req, res) => {
   new Promise((resolve, reject) => {
     Hotel.findById(req.params.id, (err, hotel) => {
