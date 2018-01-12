@@ -1,0 +1,20 @@
+{
+  "name": "hotelsapi",
+  "version": "1.0.0",
+  "description": "Hotels API",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alejo Yarce <alejo.yarce990@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^4.13.9"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.10"
+  }
+}

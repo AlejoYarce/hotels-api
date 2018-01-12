@@ -1,0 +1,34 @@
+[
+  {
+    "_id": "5a56d73145befa76a8b00f02",
+    "name": "La Corona Hotel",
+    "stars": 5,
+    "price": 550,
+    "image": "530284_167_b.jpg",
+    "amenities": "[\"Piscina\", \"Sauna\", \"Spa\", \"Playa\", \"Gym\"]"
+  },
+  {
+    "_id": "5a56d74e45befa76a8b00f03",
+    "name": "El Gran Hotel",
+    "stars": 4,
+    "price": 475,
+    "image": "1191401_110_b.jpg",
+    "amenities": "[\"Piscina\", \"Sauna\", \"Spa\"]"
+  },
+  {
+    "_id": "5a578333687ff279c3f2ccc0",
+    "name": "Vista Mar Hotel",
+    "stars": 4,
+    "price": 475,
+    "image": "3334784_86_b.jpg",
+    "amenities": "[\"Piscina\", \"Sauna\", \"Spa\", \"Playa\", \"Gym\"]"
+  },
+  {
+    "_id": "5a57c62c687ff279c3f2ccc1",
+    "name": "El Hotelito",
+    "stars": 3,
+    "price": 350,
+    "image": "5030807_9_b.jpg",
+    "amenities": "[\"Piscina\", \"Gym\"]"
+  }
+]
